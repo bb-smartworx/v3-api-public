@@ -1,0 +1,13 @@
+			  ____         ____             _____ _____ 
+ 			 |  _ \  ___  |  _ \      /\   |  __ \_   _|
+			 | |_) |( _ ) | |_) |    /  \  | |__) || |  
+			 |  _ < / _ \/\  _ <    / /\ \ |  ___/ | |  
+			 | |_) | (_>  < |_) |  / ____ \| |    _| |_ 
+			 |____/ \___/\/____/  /_/    \_\_|   |_____|
+
+README
+
+  The B&B API is a library that makes it simple to write user modules
+  for the V3 series of routers and gateways. The documentation for
+  the API can be found at dev.bb-elec.com. Code examples can be found 
+  in the examples folder. More information coming soon.
