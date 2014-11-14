@@ -1,13 +1,91 @@
-			  ____         ____             _____ _____ 
- 			 |  _ \  ___  |  _ \      /\   |  __ \_   _|
-			 | |_) |( _ ) | |_) |    /  \  | |__) || |  
-			 |  _ < / _ \/\  _ <    / /\ \ |  ___/ | |  
-			 | |_) | (_>  < |_) |  / ____ \| |    _| |_ 
-			 |____/ \___/\/____/  /_/    \_\_|   |_____|
-
+	  ____         ____     _____ _____  _  __
+	 |  _ \  ___  |  _ \   / ____|  __ \| |/ /
+	 | |_) |( _ ) | |_) | | (___ | |  | | ' / 
+	 |  _ < / _ \/\  _ <   \___ \| |  | |  <  
+	 | |_) | (_>  < |_) |  ____) | |__| | . \ 
+	 |____/ \___/\/____/  |_____/|_____/|_|\_\
+                                                                                 
 README
 
-  The B&B API is a library that makes it simple to write user modules
-  for the V3 series of routers and gateways. The documentation for
-  the API can be found at dev.bb-elec.com. Code examples can be found 
-  in the examples folder. More information coming soon.
+	Thank you for downloading the B&B SDK for V3 platforms.
+
++----+-----------------------------------------------------------------------+
+|    | Table of Contents		                                             |
++----+-----------------------------------------------------------------------+
+|  1.| Requirements                                                          |
+|  2.| Setup & Installation                                                  |
+|  3.| SDK Contents                                                          |
++----+-----------------------------------------------------------------------+
+
++----+-----------------------------------------------------------------------+
+|  1.| Requirements      		                                             |
++----+-----------------------------------------------------------------------+
+
+The following is list of requirement for developing user modules:
+
+	a) A linux linux development environment
+	b) A V3 router that is on the same network as your development environment
+	c) A username and password for this router 
+
++----+-----------------------------------------------------------------------+
+|  2.| Setup & Installation                                                  |
++----+-----------------------------------------------------------------------+
+
+Download the SDK from dev.bb-elec.com to your working environment and untar
+using:
+		tar -zxf bbsdk.tar.gz
+
+This creates a directory called bbsdk that contains everything you need to 
+start making your own user modules
+
+In this directory the is a script called install.sh that is used to download
+the latest version of the API from our devzone, update any necessary files 
+locally, and update the API on the router you are using to develop.
+To run this script just:
+		cd bbsdk
+		./install.sh
+
+Then enter your device IP address, username, and password as prompted.
+
++----+-----------------------------------------------------------------------+
+|  3.| SDK Contents                                                          |
++----+-----------------------------------------------------------------------+
+
+The SDK has the following structure:
+
+bbsdk --+-- toolchain
+        |
+        +-- modules
+        |
+        +-- lib
+        |
+        +-- include
+        |
+        +-- html
+        |
+        +-- examples
+        |
+        +-- version
+        |
+        +-- install.sh
+        |
+        +-- README
+
+toolchain - Contains the cross compiler needed to compile your user modules.
+
+modules - This is where you should put your own user module projects.
+
+lib - Directory that contains the B&B API shared library. 
+
+include - Contains the header files for the B&B API
+
+html - A copy of the API guide in html format, open index.html with a web
+       browser to view.
+
+examples - Example user modules to use as a reference point.
+
+version - File with version number
+
+install.sh - Script to download and install the latest shared library
+
+README - This file!

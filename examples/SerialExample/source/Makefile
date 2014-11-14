@@ -1,9 +1,11 @@
-CROSS_COMPILE=/opt/projects/toolchains/timesys-beagle-black/beaglebone_black/toolchain/usr/bin/armv7l-timesys-linux-gnueabi-
+NAME=SerialExample
+
+CROSS_COMPILE=../../../toolchain/usr/bin/armv7l-timesys-linux-gnueabi-
 CC=$(CROSS_COMPILE)gcc
 CXX=$(CROSS_COMPILE)g++
 CFLAGS=-march=armv7-a -mtune=cortex-a8 -g -pthread -mfloat-abi=softfp -mfpu=neon -ffast-math -O3 -fPIC
-CPPFLAGS = -I../../../include/ -I/opt/projects/V3-Gateway/build/deploy/usr/local/include/json-c
-LDFLAGS = -s -L../../../lib -L/opt/projects/V3-Gateway/build/deploy/usr/local/lib
+CPPFLAGS = -I../../../include/
+LDFLAGS = -s -L../../../lib/
 LDLIBS = -lbbapi -ljson-c
 
 MODULE_EXE = module
@@ -26,7 +28,7 @@ clean:
 install:
 	install -d $(DESTDIR)/www/
 	install -d $(DESTDIR)/bin/
-	install -m 755 $(MODULE_EXE) $(DESTDIR)/bin/SerialExample	
+	install -m 755 $(MODULE_EXE) $(DESTDIR)/bin/$(NAME)	
 	install -m 755 $(MODULE_CGI_EXE) $(DESTDIR)/bin/cgi
 	ln -s ../bin/cgi $(DESTDIR)/www/index.cgi
 	ln -s ../bin/cgi $(DESTDIR)/www/set.cgi

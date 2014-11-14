@@ -1,7 +1,6 @@
 MODNAME := $(shell basename $$PWD)
 TEMPDIR := /tmp/module
 IMGDIR  ?= .
-ROUTER  ?= 192.168.90.12
 
 export DESTDIR := $(TEMPDIR)/$(MODNAME)
 
@@ -16,6 +15,3 @@ all:
 clean:
 	make -C source clean
 	rm -f $(IMGDIR)/$(MODNAME).tgz
-
-install: all
-	curl -F file=@$(IMGDIR)/$(MODNAME).tgz --output /dev/null http://root:root@$(ROUTER)/module_add.cgi

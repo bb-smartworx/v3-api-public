@@ -1,11 +1,11 @@
 NAME=GpioExample
 
-CROSS_COMPILE=/opt/projects/toolchains/timesys-beagle-black/beaglebone_black/toolchain/usr/bin/armv7l-timesys-linux-gnueabi-
+CROSS_COMPILE==../../../toolchain/usr/bin/armv7l-timesys-linux-gnueabi-
 CC=$(CROSS_COMPILE)gcc
 CXX=$(CROSS_COMPILE)g++
 CFLAGS=-march=armv7-a -mtune=cortex-a8 -g -pthread -mfloat-abi=softfp -mfpu=neon -ffast-math -O3 -fPIC
-CPPFLAGS = -I../../../include/ -I/opt/projects/V3-Gateway/build/deploy/usr/local/include/json-c
-LDFLAGS = -s -L../../../lib -L/opt/projects/V3-Gateway/build/deploy/usr/local/lib
+CPPFLAGS = -I../../../include/
+LDFLAGS = -s -L../../../lib
 LDLIBS = -lbbapi -ljson-c
 
 MODULE_EXE = module
